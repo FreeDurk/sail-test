@@ -13,7 +13,7 @@ jobs:
         with:
           host: ${{secrets.SSH_HOST}}
           key: ${{secrets.SSH_KEY}}
-          username: ${{secrets.SSH_USER}}
+          username: ${{secrets.SSH_USERNAME}}
           
           script: |
             cd /home/var/www/sail-test
