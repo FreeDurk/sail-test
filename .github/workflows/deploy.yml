@@ -16,7 +16,9 @@ jobs:
           username: ${{secrets.SSH_USERNAME}}
           
           script: |
-            cd /home/var/www/sail-test
+            su durk
+            cd /home
+            cd /var/www/sail-test
             git pull
             echo 'Done.'
       
