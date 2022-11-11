@@ -19,6 +19,6 @@ jobs:
             su durk
             cd /home
             cd /var/www/sail-test
-            git pull
+            git pull origin master
             echo 'Done.'
       
