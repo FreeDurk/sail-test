@@ -399,7 +399,7 @@
 
 
 
-			<h1 style="color: white;">Test Test Test</h1>
+			<h1 style="color: white;">Test CI/CD without build docker image</h1>
 		</div>
 	</div>
 </body>
