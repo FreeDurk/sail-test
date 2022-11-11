@@ -1,17 +1,20 @@
 name: Build & Deploy
-
 on:
   push:
     branches: [master]
-    
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Deploy
-        uses: actions/checkout@v2
+      - name: Deploy test
+        uses: appleboy/ssh-action@v0.1.2
         with:
           host: ${{secrets.SSH_HOST}}
           key: ${{secrets.SSH_KEY}}
-          username: ${{secrets.SSH_USERNAME}}
-      
+          username: ${{ secrets.SSH_USERNAME }}
+     
+          script: |
+            cd /home/var/www/sail-test 
+            git pull origin master 
+            echo 'Deployment successful to digital ocean'
