@@ -1,24 +1,22 @@
 name: Build & Deploy
-
 on:
   push:
     branches: [master]
-    
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Deploy
-        uses: actions/checkout@v2
+      - name: checkout
+        uses: actions/checkout@v1
         with:
-          host: ${{secrets.SSH_HOST}}
-          key: ${{secrets.SSH_KEY}}
-          username: ${{secrets.SSH_USERNAME}}
-          
+          host: ${{ secrets.SSH_HOST }}
+          key: ${{ secrets.SSH_KEY }}
+          username: ${{ secrets.SSH_USERNAME }}
+     
           script: |
-            su durk
             cd /home
             cd /var/www/sail-test
-            git pull
-            echo 'Done.'
-      
+            git config --global init.defaultBranch master
+            git pull origin master 
+            echo 'Deployment successful to digital ocean'
