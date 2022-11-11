@@ -16,6 +16,7 @@ jobs:
      
           script: |
             cd /home
-            cd /var/www/sail-test 
+            cd /var/www/sail-test
+            git config --global init.defaultBranch master
             git pull origin master 
             echo 'Deployment successful to digital ocean'
