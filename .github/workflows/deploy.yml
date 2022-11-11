@@ -15,6 +15,7 @@ jobs:
           username: ${{ secrets.SSH_USERNAME }}
      
           script: |
-            cd /home/var/www/sail-test 
+            cd /home
+            cd /var/www/sail-test 
             git pull origin master 
             echo 'Deployment successful to digital ocean'
